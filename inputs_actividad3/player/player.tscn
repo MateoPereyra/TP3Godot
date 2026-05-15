@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dl20c6v8jnswi"]
+
+[ext_resource type="Script" uid="uid://btgpimddubsoo" path="res://player/player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cfjs8i0ek8yot" path="res://player/player.png" id="2"]
+[ext_resource type="Script" uid="uid://bb1328h2emnnl" path="res://player/wasd_polling_controller.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://comnm5ccsao85" path="res://player/mouse_controller.gd" id="3_yw30f"]
+[ext_resource type="Script" uid="uid://cfddh51ncyuud" path="res://player/click_controller.gd" id="4_qjkh3"]
+[ext_resource type="Script" uid="uid://bm8xlmj8i0m0g" path="res://player/wasd_event_controller.gd" id="5_g6k8r"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(15.8, 15.8)
+
+[node name="player" type="CharacterBody2D" unique_id=645700563]
+script = ExtResource("1")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1494942244]
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=514286283]
+visible = false
+shape = SubResource("1")
+
+[node name="MouseController" type="Node" parent="." unique_id=1251084389]
+script = ExtResource("3_yw30f")
+
+[node name="ClickController" type="Node" parent="." unique_id=316368371]
+script = ExtResource("4_qjkh3")
+
+[node name="WASDEventController" type="Node" parent="." unique_id=1050595500]
+script = ExtResource("5_g6k8r")
+
+[node name="WASDPollingController" type="Node" parent="." unique_id=337486890]
+script = ExtResource("3_g1dw6")
